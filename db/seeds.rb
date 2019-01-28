@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Dog.destroy_all
+100.times do
+  Dog.create(
+    name: Faker::Dog.name,
+    age: rand(1..13)
+  )
+end
