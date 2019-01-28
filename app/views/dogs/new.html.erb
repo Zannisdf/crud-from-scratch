@@ -8,13 +8,6 @@
   <%= alert %>
 <% end %>
 
-
-<%= form_with(model: @dog, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-  <%= f.submit 'Create!' %>
-<% end %>
+<%= render partial: 'form' %>
 
 <%= link_to 'Back', root_path %>
