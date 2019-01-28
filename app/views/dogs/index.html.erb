@@ -1,5 +1,6 @@
+<%= link_to 'New Dog', new_dog_path %>
 <ol>
   <% @dogs.each do |dog| %>
-    <li><%= "#{dog.name}, #{dog.age}" %></li>
+    <li><%= link_to "#{dog.name} - #{dog.age}", dog_path(dog) %></li>
   <% end %>
 </ol>
