@@ -4,4 +4,5 @@
 <%= @dog.age %>
 
 <%= link_to 'Edit dog', edit_dog_path(@dog) %>
+<%= link_to 'Delete dog', dog_path(@dog), data: {confirm: 'Are you sure?', method: :delete} %>
 <%= link_to 'Back', root_path %>

@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   def index
-    @dogs = Dog.all
+    @dogs = Dog.order(:id)
   end
 
   def new
@@ -23,7 +23,21 @@ class DogsController < ApplicationController
   def edit
     @dog = Dog.find(params[:id])
   end
-  
+
+  def update
+    @dog = Dog.find(params[:id])
+    if @dog.update(params[:dog])
+      redirect_to root_path, notice: 'Dog was updated.'
+    else
+      redirect_to @dog, alert: 'An error has ocurred, please try again.'
+    end
+  end
+
+  def destroy
+    @dog = Dog.find(params[:id])
+    @dog.destroy
+    redirect_to root_path, notice: 'Dog was deleted.'
+  end
 
   private
 
